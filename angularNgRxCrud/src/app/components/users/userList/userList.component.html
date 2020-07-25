@@ -1,0 +1,81 @@
+<div>
+  <section class="bradcrumbs row bgColorStyle2">
+      <ul class="centerWidth">
+          <li>
+              <a href="#"  routerLink="/UserList"class="pathway"><span>משתמשים</span></a>
+              <span class="divider">/</span>
+          </li>
+          <li>
+              <span>ניהול משתמשים</span>
+          </li>
+      </ul>
+  </section>
+  <section class="managment row bgColorStyle2">
+      <div class="container">
+          <div class="col-md-12"><h2 class="headdingColor1">ניהול משתמשים</h2></div>
+          <div class="formContainer col-md-6 col-sm-10 col-xs-12">
+              <form class="formStyle searchForm">
+                  <fieldset>
+                      <div class="col-md-4">
+                          <label for="userName">שם משתמש</label>
+                          <input id="userName" name="userName"type="text"  [(ngModel)]="searchCriteria.UserName"  >
+                      </div>
+                      <div class="col-md-4">
+                          <label for="positionName">תפקיד</label>
+                          <select  id="positionName"  name="positionName"  [(ngModel)]="searchCriteria.RoleId"  > 
+                            <option *ngFor="let role of roles" [value]="role.Id">{{role.Description}}</option> 
+                        </select>
+                        
+                      </div>
+                      <div class="col-md-2">
+                          <button class="searcButton buttonStyle" (click)="searchUsersClicked()">חיפוש</button>
+                      </div>
+                  </fieldset>
+              </form>
+          </div>
+          <div class="newUser-Container col-md-6 col-sm-2 col-xs-12">
+              <div class="newUser-inner">
+                  <!-- <button id="AddUser" class="add-newUser bgColorStyle3"><i class="fa fa-plus" aria-hidden="true"></i></button> -->
+                  <a class="editLink add-newUser bgColorStyle3" routerLink="/UserUpdate/0" title="ערוך פרטי משתמש" aria-label="ערוך פרטי משתמש"><i class="fa fa-plus" aria-hidden="true"></i></a>
+                  <span>הוספת משתמש חדש</span>
+              </div>
+          </div>
+      </div>
+  </section>
+  
+  <main id="mainSection" class="MainContainer centerWidth">
+        <div class="modalTable-inner boederBg" >
+          <table class="tableStyle1" title="טבלת משתמשים" id="UserTable">
+
+
+              <thead>
+                  <tr>
+                      <th>מספר זהות<button class="sortTableBy" title="מיין עמודת מספר זהות"><i class="fa fa-sort-desc" aria-hidden="true"></i></button></th>
+                      <th>שם משתמש</th>
+                      <th>תפקיד</th>
+                      <th>תאריך יצירה</th>
+                      <th class="btnContainer">פעיל</th>
+                      <th class="btnContainer">עדכון</th>
+                  </tr>
+              </thead>
+              <tbody *ngFor="let user of users">
+               
+                  <tr>
+                      <td >{{user.Id}}</td>
+                      <td>{{user.UserName}}</td>
+                      <td>{{user.RoleDescription}}</td>
+                      <td>{{user.CreateDate}}</td>
+                      <td  class="btnContainer">
+                         {{user.IsActive ?'כן':'לא'}}
+                      </td>
+                      <td data-th="עדכון" class="btnContainer">
+                          <!-- <button type="button" class="editButton" title="ערוך פרטי משתמש" aria-label="ערוך פרטי משתמש"><i class="fa fa-pencil" aria-hidden="true"></i></button> -->
+                          <a class="editLink" routerLink="/UserUpdate/{{ user.Id }}" title="ערוך פרטי משתמש" aria-label="ערוך פרטי משתמש"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                         </td>
+                  </tr>
+              </tbody>
+          </table>
+      </div>
+     
+  </main>
+</div>

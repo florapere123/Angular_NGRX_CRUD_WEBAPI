@@ -1,6 +1,6 @@
-import { User } from '../../user';
+import { User } from '../../interfaces/user';
 import { createAction, props } from '@ngrx/store';
-import { SearchCriteria } from '../../searchCriteria';
+import { SearchCriteria } from '../../interfaces/searchCriteria';
  
 
 export const toggleUserCode = createAction(

@@ -1,7 +1,7 @@
 import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
-import { User } from '../user';
-import { Role } from '../role';
-import {SearchCriteria} from '../searchCriteria';
+import { User } from '../../../interfaces/user';
+import { Role } from '../../../interfaces/role';
+import {SearchCriteria} from '../../../interfaces/searchCriteria';
  
 @Component({
   selector: 'app-user-list',

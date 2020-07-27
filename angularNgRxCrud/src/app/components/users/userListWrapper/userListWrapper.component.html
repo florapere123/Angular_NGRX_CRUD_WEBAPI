@@ -1,6 +1,5 @@
   <app-user-list [errorMessage]="errorMessage$ | async"
                      [users]="users$ | async"
                      [roles]="roles$ | async"
-                     (searchUsers)="searchUsers($any($event))"
-                    (userWasSelected)="userSelected($any($event))">
+                     (searchUsers)="searchUsers($any($event))">
     </app-user-list> 

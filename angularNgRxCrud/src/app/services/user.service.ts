@@ -3,10 +3,10 @@ import { HttpClient,HttpParams, HttpHeaders } from '@angular/common/http';
 
 import { Observable, of, throwError } from 'rxjs';
 import { catchError, tap, map } from 'rxjs/operators';
-import { API_URL_USERS,API_URL_ROLES } from '../../Config';
-import { User } from './user';
-import { Role } from './role';
-import { SearchCriteria } from './searchCriteria';
+import { API_URL_USERS,API_URL_ROLES } from '../Config';
+import { User } from '../interfaces/user'
+import { Role } from '../interfaces/role';
+import { SearchCriteria } from '../interfaces/searchCriteria';
 @Injectable({
   providedIn: 'root',
 })

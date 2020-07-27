@@ -1,6 +1,6 @@
-import { User } from '../../user';
+import { User } from '../../interfaces/user';
 import { createAction, props } from '@ngrx/store';
-import { Role } from '../../role';
+import { Role } from '../../interfaces/role';
 
 export const loadUsersSuccess = createAction(
     '[User API] Load Success',

@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { User } from '../user';
+import { User } from '../../../interfaces/user';
 import { Store } from '@ngrx/store';
-import { State,  getUsers, getRoles,getError } from '../state';
-import { UserPageActions } from '../state/actions';
-import { Role } from '../role';
-import { SearchCriteria } from '../searchCriteria';
+import {   getUsers, getRoles,getError } from '../../../store';
 
+import { UserPageActions } from '../../../store/actions';
+import { Role } from '../../../interfaces/role';
+import { SearchCriteria } from'../../../interfaces/searchCriteria';
+import {UserState} from '../../../interfaces/userState';
 @Component({
   templateUrl: './userListWrapper.component.html'
 })
@@ -21,7 +22,7 @@ export class UserListWrapper implements OnInit {
   users$: Observable<User[]>;
   roles$: Observable<Role[]>;
  
-  constructor(private store: Store<State>) { }
+  constructor(private store: Store<UserState>) { }
 
   ngOnInit(): void {
     this.store.dispatch(UserPageActions.loadUsers());

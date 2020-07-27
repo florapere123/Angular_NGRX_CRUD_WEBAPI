@@ -7,9 +7,9 @@ import { UserUpdateComponent } from './UserUpdate/userUpdate.component';
  
 /* NgRx */
 import { StoreModule } from '@ngrx/store';
-import { userReducer } from './state/user.reducer';
+import { userReducer } from '../../store/user.reducer';
 import { EffectsModule } from '@ngrx/effects';
-import { UserEffects } from './state/user.effects';
+import { UserEffects } from '../../store/user.effects';
 import { SharedModule } from '../../shared/shared.module';
 import { PageNotFoundComponent } from '../shared/page-not-found.component';
   

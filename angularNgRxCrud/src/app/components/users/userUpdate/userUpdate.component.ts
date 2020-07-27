@@ -3,14 +3,15 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { Observable } from 'rxjs';
 import { filter } from 'rxjs/operators';
-import { User } from '../user';
-import { Role } from '../role';
+import { User } from  '../../../interfaces/user';
+import { Role } from '../../../interfaces/role';
 import { ActivatedRoute, Router } from '@angular/router';
 /* NgRx */
 import { Store } from '@ngrx/store';
-import { State,getUser,getRoles,getError } from '../state';
+import { getUser,getRoles,getError } from '../../../store';
  
-import { UserPageActions } from '../state/actions';
+import { UserPageActions } from '../../../store/actions';
+import { UserState } from  '../../../interfaces/userState'
 
 @Component({
   selector: 'app-user-edit',
@@ -28,7 +29,7 @@ export class UserUpdateComponent implements OnInit {
    roles$: Observable<Role[]>;
    errorMessage$: Observable<string>;
   
-   constructor(private store: Store<State>, private route: ActivatedRoute,
+   constructor(private store: Store<UserState>, private route: ActivatedRoute,
       private router: Router) {
  
      };

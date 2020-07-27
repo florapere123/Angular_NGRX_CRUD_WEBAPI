@@ -4,18 +4,6 @@ import { UserApiActions, UserPageActions } from  './actions/index';
 import { createReducer, on } from '@ngrx/store';
 import { UserState } from '../interfaces/userState';
 
-// export interface UserState {
-//   showUserCode: boolean;
-//   currentUser: User;
-//   users: User[];
-//   roles: Role[];
-//   error: string;
-// }
-// export interface RolesState {
-   
-//   roles: Role[];
-//   error: string;
-// }
 const initialState: UserState = {
   showUserCode: true,
   currentUser: null,
